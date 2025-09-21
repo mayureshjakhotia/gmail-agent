@@ -1,5 +1,35 @@
 # Gmail Agent
 
+## Project Overview
+
+The Gmail Event Agent is an intelligent automation tool that:
+- Scans Gmail emails for potential event-related content
+- Extracts structured event information using AI
+- Saves and lists discovered events
+
+### Key Features
+- Automated event discovery from Gmail
+- AI-powered event information extraction
+- Local database storage of events
+- Flexible scanning and listing modes
+
+### How It Works
+1. Connects to Gmail API using OAuth
+2. Searches emails for event-related keywords
+3. Uses Ollama (local AI) to extract event details
+4. Saves structured event information
+5. Allows listing of discovered events
+
+### Modes
+- `scan`: Automatically discover and save events
+- `show`: Display previously discovered events
+
+### Technologies
+- Python
+- Google Gmail API
+- Ollama (Local AI)
+- SQLite for event storage
+
 ## Security Warning
 
 ### Credentials File
