@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.env
+.venv
+env/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Credentials and Tokens
+credentials.json
+token.pickle
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+
+# macOS
+.DS_Store
+
+# Ollama
+ollama_cache/
+
+# Sensitive Information
+*.secret
+.env.local
+
+# Build and Distribution
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Miscellaneous
+.tmp/
+
+credentials.json
+token.pickle
