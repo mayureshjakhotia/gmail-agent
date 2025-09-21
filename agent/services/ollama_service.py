@@ -1,7 +1,8 @@
 import json
 
 from utils.email_utils import clean_email_body
-from utils.config import conf
+from config.config import conf
+from utils.logger import logger
 
 
 class OllamaService:
@@ -48,13 +49,13 @@ class OllamaService:
                 ]
             )
             output = response['message']['content']
-            print(f"Raw model output: {output}")
+            logger.debug(f"Raw model output: {output}")
             return json.loads(output)
         except json.JSONDecodeError:
-            print(f"JSON parsing failed. Raw output: {output}")
+            logger.error(f"JSON parsing failed. Raw output: {output}")
             return {}
         except Exception as e:
-            print(f"Ollama error: {e}")
+            logger.error(f"Ollama error: {e}")
             return {}
 
 ollama_client = OllamaService(model_name="mistral")

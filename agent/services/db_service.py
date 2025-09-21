@@ -1,12 +1,10 @@
 import sqlite3
 
-from utils.config import conf
-
-DEFAULT_DB_FILE = "events.db"
+from config.config import conf
 
 class DatabaseService:
-    def __init__(self, db_file=None):
-        self.db_file = conf["DB_FILE"] or DEFAULT_DB_FILE
+    def __init__(self):
+        self.db_file = conf["DB_FILE"]
         self._init_db()
 
     def _connect(self):
@@ -47,10 +45,10 @@ class DatabaseService:
                       ))
             conn.commit()
 
-    def list_events(self):
+    def get_events(self, limit):
         with self._connect() as conn:
             c = conn.cursor()
-            c.execute("SELECT id, name, event_start, event_end, location FROM events ORDER BY event_start")
+            c.execute(f"SELECT id, name, event_start, event_end, location FROM events ORDER BY id LIMIT {limit}")
             return c.fetchall()
 
     def get_event_by_name(self, name):

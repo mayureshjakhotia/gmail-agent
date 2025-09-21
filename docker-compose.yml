@@ -1,0 +1,8 @@
+services:
+  gmail-agent:
+    build: .
+    network_mode: "host"
+    volumes:
+      - .:/app
+    environment:
+      - OLLAMA_HOST=host.docker.internal

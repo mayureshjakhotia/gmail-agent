@@ -42,11 +42,5 @@ build/
 dist/
 *.egg-info/
 
-# Jupyter Notebooks
-.ipynb_checkpoints/
-
 # Miscellaneous
 .tmp/
-
-credentials.json
-token.pickle

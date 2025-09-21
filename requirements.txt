@@ -1,0 +1,6 @@
+dotenv==0.9.9
+google-api-core==2.25.1
+google-api-python-client==2.182.0
+googleapis-common-protos==1.70.0
+google_auth_oauthlib
+ollama

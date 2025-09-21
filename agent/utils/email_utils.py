@@ -3,7 +3,7 @@ import html
 
 def contains_event_keywords(subject, body):
     keywords = [
-        "event", "grand prix", "ticket", "tickets", "waitlist", "register",
+        "event", "ticket", "tickets", "waitlist", "register",
         "rsvp", "join us", "schedule", "conference", "webinar", "meetup",
         "festival", "show", "exhibition", "opening", "launch", "celebration",
         "party", "ceremony"
