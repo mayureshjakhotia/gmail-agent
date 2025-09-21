@@ -7,8 +7,6 @@ from googleapiclient.discovery import build
 
 from config.config import conf
 
-SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
-
 class GmailService:
     def __init__(self, creds_path="credentials.json", token_path="token.pickle", scopes=None):
         self.scopes = scopes or conf["GMAIL_SCOPES"]
@@ -25,7 +23,7 @@ class GmailService:
             if creds and creds.expired and creds.refresh_token:
                 creds.refresh(Request())
             else:
-                flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+                flow = InstalledAppFlow.from_client_secrets_file('credentials.json', self.scopes)
                 creds = flow.run_local_server(port=0)
             with open('token.pickle', 'wb') as token:
                 pickle.dump(creds, token)
